@@ -45,7 +45,7 @@ class WebSocketTransport extends EventEmitter {
   onError(event) {
     try {
       this.ws.close();
-    } catch {} // eslint-disable-line no-empty
+    } catch(err) {} // eslint-disable-line no-empty
 
     if (this.tries > 20) {
       this.emit('error', event.error);
